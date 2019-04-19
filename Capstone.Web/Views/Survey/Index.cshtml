@@ -1,0 +1,29 @@
+﻿@model SurveyViewModel
+@section PageTitle {Survey}
+@section StyleSheet {
+    <link rel="stylesheet" href="~/css/SurveyInput.css" />
+}
+    <form asp-controller="Survey" asp-action="Index" method="post">
+        <div class="form-input">
+            <label asp-for="ParkCode"></label>
+            <select asp-for="ParkCode" asp-items="@Model.ParkNames"></select>
+        </div>
+        <div class="form-input">
+            <label asp-for="EmailAddress"></label>
+            <input type="email" asp-for="EmailAddress" />
+        </div class="form-input">
+        <div class="form-input">
+            <label asp-for="State"></label>
+            <select asp-for="State" asp-items="@Model.StateNames"></select>
+        </div>
+        <div class="form-input">
+            <label asp-for="ActivityLevel"></label>
+            <input type="radio" name="ActivityLevel" value="inactive"> inactive
+            <input type="radio" name="ActivityLevel" value="sedentary"> sedentary
+            <input type="radio" name="ActivityLevel" value="active"> active
+            <input type="radio" name="ActivityLevel" value="extremely active"> extremely active
+        </div>
+        <div class="form-submit">
+            <input type="submit" value="Submit" />
+        </div>
+    </form>

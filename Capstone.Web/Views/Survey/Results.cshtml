@@ -1,0 +1,16 @@
+﻿@model IList<SurveyResultsViewModel>
+@section PageTitle {Survey Results}
+@section StyleSheet {
+    <link rel="stylesheet" href="~/css/SurveyResults.css" />
+}
+    <section class="survey-results">
+        @foreach (SurveyResultsViewModel surveyEntry in Model)
+        {
+            <div class="survey-data">
+                <img src="~/images/parks/@(surveyEntry.ParkCode).jpg" />
+                <span class="survey-name">@(surveyEntry.ParkName)</span>
+                <span class="survey-votes">@(surveyEntry.Votes)</span>
+            </div>
+        }
+    </section>
+

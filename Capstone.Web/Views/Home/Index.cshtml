@@ -1,0 +1,24 @@
+﻿@model IList<HomeViewModel>
+@section PageTitle {Home}
+@section StyleSheet {
+<link rel="stylesheet" href="~/css/ParkList.css" />
+}
+<section>
+    @foreach (HomeViewModel homeVM in @Model)
+    {
+    <div class="park-item">
+        <div class="park-image">
+            <a href="/Home/Detail/?parkcode=@(homeVM.ParkCode)">
+                <img src="~/images/parks/@(homeVM.ParkCode).jpg" />
+            </a>
+        </div>
+        <div class="park-text-block">
+            <div class="park-name-link">
+                <a href="/Home/Detail/?parkcode=@(homeVM.ParkCode)">@homeVM.ParkName</a>
+            </div>
+            <div><span>State: </span>@homeVM.State</div>
+            <div><span>Description: </span>@homeVM.ParkDescription</div>
+        </div>
+    </div>
+    }
+</section>

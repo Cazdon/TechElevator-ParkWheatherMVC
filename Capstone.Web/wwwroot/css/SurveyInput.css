@@ -1,0 +1,18 @@
+﻿form {
+    display: flex;
+    flex-direction: column;
+}
+
+form div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
+}
+
+.form-input > label {
+    width: 15%;
+}
+
+.form-submit {
+    justify-content:center;
+}

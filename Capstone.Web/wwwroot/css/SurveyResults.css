@@ -1,0 +1,21 @@
+﻿.survey-results > div {
+    display: flex;
+    flex-direction: row;
+}
+
+.survey-data {
+    margin-bottom: 3%;
+    font-size: 150%;
+}
+
+.survey-name {
+    width: 25%;
+    text-align: left;
+    justify-content: center;
+}
+
+.survey-votes {
+    width: 25%;
+    text-align: left;
+    justify-content: center;
+}

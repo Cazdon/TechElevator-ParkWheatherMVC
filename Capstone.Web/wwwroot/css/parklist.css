@@ -1,0 +1,34 @@
+﻿.park-item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.park-image {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 40%;
+}
+
+.park-text-block {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    flex-wrap: wrap;
+    margin-left: 30px;
+}
+
+.park-name-link {
+    margin-bottom: 2%;
+}
+
+.park-name-link > a {
+    font-size: 175%;
+    font-weight: bold;
+}
+
+.park-text-block>div>span {
+    font-weight: bold;
+}

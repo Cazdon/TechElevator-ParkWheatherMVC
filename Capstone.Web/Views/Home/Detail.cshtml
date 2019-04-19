@@ -1,0 +1,56 @@
+﻿@model HomeDetailViewModel
+@section PageTitle {Park Detail}
+@section StyleSheet {
+    <link rel="stylesheet" href="~/css/ParkDetail.css" />
+}
+@{ CultureInfo culture = new CultureInfo("en-US"); }
+@using System.Globalization
+    <section class="park-info">
+            <div class="park-image">
+                <img src="~/images/parks/@(Model.ParkData.ParkCode).jpg" />
+            </div>
+            <div class="park-text-block">
+                <div class="park-quotation">@(Model.ParkData.InspirationalQuote) - @Model.ParkData.InspirationalQuoteSource</div>
+                <div><span>Park Name: </span>@(Model.ParkData.ParkName)</div>
+                <div><span>State: </span>@Model.ParkData.State</div>
+                <div><span>Description: </span>@Model.ParkData.ParkDescription</div>
+                <div class="park-data-block">
+                    <div class="park-data-left">
+                        <div><span>Acreage: </span>@(Model.ParkData.Acreage.ToString("N0", culture) ) acres</div>
+                        <div><span>Elevation: </span>@(Model.ParkData.ElevationInFeet.ToString("N0", culture) ) feet</div>
+                        <div><span>Miles of Trails: </span>@(Model.ParkData.MilesOfTrail.ToString("N0", culture) ) miles</div>
+                        <div><span>Number of Campsites: </span>@(Model.ParkData.NumberOfCampsites.ToString("N0", culture) )</div>
+                    </div>
+                    <div class="park-data-right">
+                        <div><span>Climate: </span>@Model.ParkData.Climate</div>
+                        <div><span>Annual Visitor Count: </span>@(Model.ParkData.AnnualVisitorCount.ToString("N0", culture) )</div>
+                        <div><span>Entry Fee: </span>@(Model.ParkData.EntryFee.ToString("C2"))</div>
+                        <div><span>Number of Animal Species: </span>@(Model.ParkData.NumberOfAnimalSpecies.ToString("N0", culture) )</div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="weather-info">
+        @for (int i = 0; i < Model.ForecastData.Count; i++)
+        {
+        <div class="day-weather">
+            @if (i == 0)
+            {
+                <h3>Today</h3>
+            }
+            else
+            {
+                <h3>@((DateTime.Now).AddDays((double)i).ToString("dddd"))</h3>
+            }
+            <img src="~/images/weather/@(Model.ForecastData[i].Forecast.Replace(" ", "")).png" />
+            <div>
+                <span>High @(Model.ForecastData[i].High)&#176@(Model.TempScale)</span>
+                <span>Low @(Model.ForecastData[i].Low)&#176@(Model.TempScale)</span>
+            </div>
+            @foreach (string message in Model.ForecastData[i].Recommendations)
+            {
+                <span>@message</span><br />
+            }
+        </div>
+        }
+    </section>

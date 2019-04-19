@@ -1,0 +1,60 @@
+﻿.park-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.park-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin-left: 280px;
+}
+
+.park-data-block {
+    margin-top: 2%;
+}
+
+.park-quotation {
+    text-align: center;
+    font-size: 150%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+
+}
+.park-info > div div > span {
+    font-weight: bold;
+}
+.park-info>div:last-child {
+    margin-left: 2%;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 2%;
+    justify-content:space-between;
+}
+
+.day-weather {
+    display: flex;
+    flex-direction: column;
+    width: 19%;
+}
+
+.day-weather h3 {
+    text-align: center;
+}
+
+.day-weather > div {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+
+.day-weather > div > * {
+    font-size: 120%;
+    font-weight: bold;
+}
